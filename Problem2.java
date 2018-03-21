@@ -9,7 +9,7 @@ public class EvenFib {
 				if (n2 < 4000000) {
 					if (n2 % 2 == 0) {
 						sum = sum + n2;
-						System.out.println(n2);	
+						System.out.println(n2);
 					}
 				n0 = n1;
 				n1 = n2;
@@ -18,4 +18,3 @@ public class EvenFib {
 		System.out.println(sum);
 		}
 	}
-
