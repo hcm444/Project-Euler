@@ -1,16 +1,16 @@
-#include <stdio.h>
 #include <iostream>
-using namespace std;
-int main(void)
-{
-  int s = 0;
-  int n0 = 1, n1 =1, n2 = 2;
-  while (n2 < 4000000) {
-    n2 = n1 + n0;
-    s += n2 * !(n2%2);
-      n0 = n1;
-      n1 = n2;
+  int main() {
+    int s, x, y, z;
+    s = 0;
+    x = 1;
+    y = x;
+    z = 2;
+    while (z < 4000000) {
+      z = x + y;
+      s += z * !(z % 2);
+      x = y;
+      y = z;
     }
-cout << s << endl;
-return 0;
-}
+    std::cout << s;
+    return 0;
+  }
