@@ -1,19 +1,25 @@
 #include <iostream>
-bool isPrime(int n) {
-  if ((n < 2) || (n % 2 == 0)) return false;
-  for (int i = 3;
-    (i * i) <= n; i += 2) {
-    if (n % i == 0) return false;
-  }
-  if (n == 2) return true;
-}
-int main() {
-  unsigned long long sum = 0;
-  for (int i = 3; i < 2000000; i += 2) {
-    if (isPrime(i)) {
-      sum += i;
+using namespace std;
+  int main() {
+    int number = 2000000;
+    int counter; 
+    int x; 
+    int y; 
+    long sum = 0;
+    counter = 0;
+    for (x = 2; x <= number ; x++) {
+      for (y = 2; y < number; y++)
+        if (x % y == 0)
+          break;
+      if (x == y) {
+        counter++;
+        //std::cout << x << " ";
+        sum += x;
+        if (counter == number)
+          break;
+      }
     }
+    cout << endl;
+    std::cout << "Sum : " << sum << endl;
+            
   }
-  std::cout << sum + 2;
-  return 0;
-}
